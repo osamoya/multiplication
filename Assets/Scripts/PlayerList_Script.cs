@@ -26,7 +26,7 @@ public class PlayerList_Script : MonoBehaviour
         
     }
 
-    void DOZousyokuAll()
+    public void DOZousyokuAll()
     {
         int prenum = list.Count;//要素の数なので注意！
         for (int i=0;i<prenum;i++)
