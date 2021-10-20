@@ -10,10 +10,12 @@ public class BallZousyoku : MonoBehaviour
 /// このスクリプトを複製みたいな感じでやる
 /// 親を考えると結局どこかで重い処理が挟まる気がするので考えたくない
 /// </summary>
+    PlayerList_Script playerlist_;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("誕生しました！");
+        playerlist_ = GameObject.Find("playerList").GetComponent<PlayerList_Script>();//正しく動いたらタグに修正
     }
 
     // Update is called once per frame
@@ -25,5 +27,6 @@ public class BallZousyoku : MonoBehaviour
     public void Zousyoku()
     {
         //PlayerList_Script.list.Add(new BallZousyoku());
+        playerlist_.list.Add(new BallZousyoku());
     }
 }
