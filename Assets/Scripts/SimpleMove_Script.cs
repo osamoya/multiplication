@@ -1,19 +1,19 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
-/// ”ñí‚ÉƒVƒ“ƒvƒ‹‚ÈƒXƒNƒŠƒvƒg
-/// ‘½­‹““®•sR(å‚ÉƒWƒƒƒ“ƒv–Ê)‚È‚Ì‚Å
-/// —Ç‚¢Š´‚¶‚É’²®‚·‚é•K—v‚ ‚è
+/// éå¸¸ã«ã‚·ãƒ³ãƒ—ãƒ«ãªã‚¹ã‚¯ãƒªãƒ—ãƒˆ
+/// å¤šå°‘æŒ™å‹•ä¸å¯©(ä¸»ã«ã‚¸ãƒ£ãƒ³ãƒ—é¢)ãªã®ã§
+/// è‰¯ã„æ„Ÿã˜ã«èª¿æ•´ã™ã‚‹å¿…è¦ã‚ã‚Š
 /// </summary>
 public class SimpleMove_Script : MonoBehaviour
 {
     static public bool canMove = true;
     [SerializeField] GameObject Player_;
-    [Header("‘¬‚³(addforce)")]
+    [Header("é€Ÿã•(addforce)")]
     [SerializeField] float speed_f;
-    [Header("ƒWƒƒƒ“ƒv(addforce)")]
+    [Header("ã‚¸ãƒ£ãƒ³ãƒ—(addforce)")]
     [SerializeField] float jump_f;
     Rigidbody2D rb;
 
@@ -70,7 +70,7 @@ public class SimpleMove_Script : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            //Debug.Log("Ú’nI");
+            //Debug.Log("æ¥åœ°ï¼");
             if (gameObject.transform.position.y > col.gameObject.transform.position.y)
             {
                 canStepPlayer = true; return;
@@ -82,14 +82,14 @@ public class SimpleMove_Script : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             canStepPlayer = false;
-            //Debug.Log("—£‚ê‚½");
+            //Debug.Log("é›¢ã‚ŒãŸ");
         }
     }
     private void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.tag == "Wall_tag")
         {
-            //Debug.Log("Ú’nI");
+            //Debug.Log("æ¥åœ°ï¼");
             if (gameObject.transform.position.y >= col.gameObject.transform.position.y)
             {
                 canStepWall = true; return;
@@ -101,7 +101,7 @@ public class SimpleMove_Script : MonoBehaviour
         if (col.gameObject.tag == "Wall_tag")
         {
             canStepWall = false;
-            //Debug.Log("—£‚ê‚½");
+            //Debug.Log("é›¢ã‚ŒãŸ");
         }
     }
 
