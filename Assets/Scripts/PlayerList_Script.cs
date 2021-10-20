@@ -16,7 +16,7 @@ public class PlayerList_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject firstball = GameObject.FindGameObjectWithTag("player");
+        GameObject firstball = GameObject.FindGameObjectWithTag("Player");
         list.Add(firstball.GetComponent<BallZousyoku>());
     }
 
