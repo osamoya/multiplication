@@ -24,6 +24,6 @@ public class BallZousyoku : MonoBehaviour
 
     public void Zousyoku()
     {
-        PlayerList_Script.list.Add(new BallZousyoku());
+        //PlayerList_Script.list.Add(new BallZousyoku());
     }
 }

@@ -11,19 +11,25 @@ public class PlayerList_Script : MonoBehaviour
 /// で、ここでは
 /// </summary>
 
-    public static List<BallZousyoku> list;
+    public List<BallZousyoku> list;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject firstball = GameObject.FindGameObjectWithTag("Player");
-        list.Add(firstball.GetComponent<BallZousyoku>());
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetList()
+    {
+        GameObject firstball = GameObject.FindGameObjectWithTag("Player");
+        Debug.Log(firstball);
+        list.Add(firstball.GetComponent<BallZousyoku>());
     }
 
     public void DOZousyokuAll()
