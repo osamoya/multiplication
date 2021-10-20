@@ -11,7 +11,7 @@ public class PlayerList_Script : MonoBehaviour
 /// で、ここでは
 /// </summary>
 
-    List<BallZousyoku> list;
+    public static List<BallZousyoku> list;
 
     // Start is called before the first frame update
     void Start()
