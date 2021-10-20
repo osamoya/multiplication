@@ -13,7 +13,7 @@ public class BallZousyoku : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("誕生しました！");
     }
 
     // Update is called once per frame
@@ -24,6 +24,6 @@ public class BallZousyoku : MonoBehaviour
 
     public void Zousyoku()
     {
-
+        PlayerList_Script.list.Add(new BallZousyoku());
     }
 }
