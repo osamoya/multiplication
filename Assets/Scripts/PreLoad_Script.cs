@@ -5,6 +5,8 @@ using UnityEngine;
 public class PreLoad_Script : MonoBehaviour
 {
     [SerializeField] GameObject ballpre;
+    [SerializeField] GameObject firstball;
+
     [SerializeField] GameObject Pool;
     [SerializeField] int teisuu;
     [SerializeField] int baisuu;
@@ -25,7 +27,8 @@ public class PreLoad_Script : MonoBehaviour
     {
         Debug.Log("PreSet:"+Theoretical_num+"ê›íËÇµÇ‹Ç∑");
         BallPool = new GameObject[Theoretical_num];
-        for (int i=0;i<Theoretical_num;i++)
+        BallPool[0] = firstball;
+        for (int i=1;i<Theoretical_num;i++)
         {
             Vector2 diff=new Vector2(Random.Range(-5,5), 0);
             GameObject tmp = Instantiate(ballpre,diff+pool_v, Quaternion.identity);
