@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallNumManager_Script : MonoBehaviour
+{
+    
+    static int now;
+    [SerializeField] bool isAddItem;
+    [SerializeField] bool isMultiItem;
+    [SerializeField]PreLoad_Script PreLoad_;
+    bool canGet = true;
+    // Start is called before the first frame update
+    void Start()
+    {
+        start();
+    }
+    public void start()
+    {
+        now = 1;
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!canGet) return;
+        canGet = false;
+        gameObject.SetActive(false);
+        if (isAddItem) onTriggerTeisuu(transform.position);
+        if (isMultiItem) onTriggerBaisuu();
+        Debug.Log("åªç›ÇÃå¬êîÇÕÅF"+now);
+        
+    }
+    void onTriggerTeisuu(Vector2 itemPos)
+    {
+        Debug.Log("íËêîëùâ¡");
+        Debug.Log("now="+now);
+        for (int i=0;i<5;i++,now++)
+        {
+            Vector2 rand = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+            PreLoad_.BallPool[now].transform.position = itemPos+rand;
+            Debug.Log("ç°"+now+"Ç±");
+        }
+
+    }
+    void onTriggerBaisuu()
+    {
+        Debug.Log("î{êîëùâ¡");
+
+
+        for (int i=0;i<now;i++)
+        {
+            Vector2 origin=PreLoad_.BallPool[i].transform.position;
+            Vector2 rand = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+            PreLoad_.BallPool[now + i].transform.position = origin+rand;
+            Debug.Log(now+i+"î‘ñ⁄Ç"+i+"î‘ñ⁄Ç…åƒÇ‘");
+        }
+        now *= 2;
+        
+    }
+}
